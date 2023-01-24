@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+  flask:
+    build: ./labos
+    container_name: flask5
+    restart: always
+    environment:
+      - APP_NAME=MyFlaskApp
+    expose:
+      - 8080
+  
+  nginx:
+    build: ./nginx
+    container_name: nginx5
+    restart: always
+    ports:
+      - "80:80"
