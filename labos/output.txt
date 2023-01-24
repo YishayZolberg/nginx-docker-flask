@@ -1,0 +1,3 @@
+Today is Tuesday
+The current date is 24/01/2023
+
