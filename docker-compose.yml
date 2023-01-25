@@ -3,16 +3,24 @@ version: "3.7"
 services:
   flask:
     build: ./labos
-    container_name: flask5
+    container_name: flask13
     restart: always
-    environment:
-      - APP_NAME=MyFlaskApp
     expose:
       - 8080
+    networks:
+      my-network:
+        aliases:
+          - flask-app 
   
   nginx:
     build: ./nginx
-    container_name: nginx5
+    container_name: nginx13
     restart: always
     ports:
-      - "80:80"
+      - 80:80
+    networks:
+      - my-network
+    depends_on:
+      - flask
+networks:
+  my-network: {}
