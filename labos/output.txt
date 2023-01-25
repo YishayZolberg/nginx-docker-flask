@@ -1,0 +1,2 @@
+Today is [DAY_OF_WEEK]
+The current date is [CURRENT_DATE]
