@@ -1,5 +1,10 @@
 Flask Server with Nginx and Docker Compose
 
+update 1.26.23
+ just add Terraform for build all you need to run this Docker compose.
+ you can enter your access key etc. and run with terraform apply command.
+ enjoy!
+
 This project sets up a Flask web server behind an Nginx reverse proxy using Docker Compose.
 
 Requirements:
