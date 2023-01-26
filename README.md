@@ -3,7 +3,7 @@ Flask Server with Nginx and Docker Compose
 update 1.26.23:
 
  Just add Terraform for build all you need to run this Docker compose.
- You can enter your access key etc. and run with terraform apply command.
+ You can enter your access key etc. in the terraform.tfvars file and run with terraform apply command.
  The entrypoint to the app is http://<public-ip>/hello
  enjoy!
 
