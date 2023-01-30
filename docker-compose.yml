@@ -2,8 +2,8 @@ version: "3.7"
 
 services:
   flask:
-    build: ./labos
-    container_name: flask14
+    build: ./myapp
+    container_name: myapp-main
     restart: always
     expose:
       - 8080
@@ -14,7 +14,7 @@ services:
   
   nginx:
     build: ./nginx
-    container_name: nginx14
+    container_name: myapp-nginx
     restart: always
     ports:
       - 80:80
