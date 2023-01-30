@@ -8,21 +8,24 @@ def change_text_file():
     day_of_week = datetime.today().strftime('%A')
     current_date = datetime.today().strftime('%d/%m/%Y')
 
-    # Open the original file to rw its contents
-    with open("output.txt", "r+") as file:
+    # Open the original file to r its contents
+    with open("template.txt", "r") as file:
         text = file.read()
         text = text.replace("[DAY_OF_WEEK]", day_of_week)
         text = text.replace("[CURRENT_DATE]", current_date)
-        file.seek(0)
-        file.write(text)
+    # write log access at EOF
+    with open("log.txt", "a+") as log:
+            log.write(text)
+    with open("log.txt", "r") as log:
+            log_text = log.read()
+    return log_text
 
-    return text
 
 #flask
 @app.route('/')
 def index():
-    text = change_text_file()
-    return Response(text, mimetype='text/plain')
+    log_text = change_text_file()
+    return Response(log_text, mimetype='text/plain')
 
 #trigger app
 if __name__ == '__main__':
